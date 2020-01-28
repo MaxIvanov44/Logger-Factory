@@ -20,7 +20,8 @@ namespace Logger_Factory
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    .ConfigureLogging(logging=>logging.SetMinimumLevel(LogLevel.Trace));
                 });
     }
 }
